@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		391F0EA61C7A1A22000162BB /* m.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 391F0EA51C7A150D000162BB /* m.mp4 */; };
 		393A4C111C77F73B0053EDE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393A4C101C77F73B0053EDE8 /* AppDelegate.swift */; };
 		393A4C161C77F73B0053EDE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393A4C141C77F73B0053EDE8 /* Main.storyboard */; };
 		393A4C181C77F73B0053EDE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 393A4C171C77F73B0053EDE8 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		391F0EA51C7A150D000162BB /* m.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = m.mp4; sourceTree = "<group>"; };
 		393A4C0D1C77F73A0053EDE8 /* SpotifyLoginDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyLoginDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		393A4C101C77F73B0053EDE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		393A4C151C77F73B0053EDE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,7 +50,6 @@
 		393A4C2C1C77F73B0053EDE8 /* SpotifyLoginDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifyLoginDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		393A4C301C77F73B0053EDE8 /* SpotifyLoginDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginDemoUITests.swift; sourceTree = "<group>"; };
 		393A4C321C77F73B0053EDE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		393A4C3E1C77F8C80053EDE8 /* moments.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = moments.mp4; sourceTree = "<group>"; };
 		393A4C3F1C77FB480053EDE8 /* JCVideoCutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCVideoCutter.swift; sourceTree = "<group>"; };
 		393A4C411C7804250053EDE8 /* JCVideoSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCVideoSplashViewController.swift; sourceTree = "<group>"; };
 		393A4C431C78044A0053EDE8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +103,7 @@
 		393A4C0F1C77F73B0053EDE8 /* SpotifyLoginDemo */ = {
 			isa = PBXGroup;
 			children = (
-				393A4C3E1C77F8C80053EDE8 /* moments.mp4 */,
+				391F0EA51C7A150D000162BB /* m.mp4 */,
 				393A4C101C77F73B0053EDE8 /* AppDelegate.swift */,
 				393A4C3F1C77FB480053EDE8 /* JCVideoCutter.swift */,
 				393A4C411C7804250053EDE8 /* JCVideoSplashViewController.swift */,
@@ -240,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				391F0EA61C7A1A22000162BB /* m.mp4 in Resources */,
 				393A4C1B1C77F73B0053EDE8 /* LaunchScreen.storyboard in Resources */,
 				393A4C181C77F73B0053EDE8 /* Assets.xcassets in Resources */,
 				393A4C161C77F73B0053EDE8 /* Main.storyboard in Resources */,

@@ -29,12 +29,15 @@ public class JCVideoCutter: NSObject {
             let path: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
             var outputUrl = path.objectAtIndex(0) as! String
             let manager = NSFileManager.defaultManager()
+            
             do {
                 try manager.createDirectoryAtPath(outputUrl, withIntermediateDirectories: true, attributes: nil)
             }catch{
                 
             }
+            
             outputUrl = outputUrl.convert.stringByAppendingString("output.mp4")
+            
             do{
                 try manager.removeItemAtPath(outputUrl)
             }catch{

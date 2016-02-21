@@ -21,22 +21,22 @@ public class JCVideoSplashViewController: UIViewController {
     //MARK:properties
     private let moviePlayer = AVPlayerViewController()
     private var moviePlayerSoundLevel: Float = 1.0
-    private var contentUrl: NSURL = NSURL(){
+    var contentUrl: NSURL = NSURL(){
         didSet{
             setMoviePlayer(contentUrl)
         }
     }
     
-    private var videoFrame: CGRect = CGRect()
-    private var startTime: CGFloat = 0.0
-    private var duration: CGFloat = 0.0
-    private var backgroundColor: UIColor = UIColor.blackColor(){
+     var videoFrame: CGRect = CGRect()
+     var startTime: CGFloat = 0.0
+     var duration: CGFloat = 0.0
+     var backgroundColor: UIColor = UIColor.blackColor(){
         didSet{
             view.backgroundColor = backgroundColor
         }
     }
 
-    public var sound: Bool = true{
+    var sound: Bool = true{
         didSet{
             if sound{
                 moviePlayerSoundLevel = 1.0
@@ -46,13 +46,13 @@ public class JCVideoSplashViewController: UIViewController {
         }
     }
     
-    public var alpha: CGFloat = CGFloat(){
+    var alpha: CGFloat = CGFloat(){
         didSet{
             moviePlayer.view.alpha = alpha
         }
     }
     
-    public var alwaysRepeat: Bool = true{
+    var alwaysRepeat: Bool = true{
         didSet{
             if alwaysRepeat {
                 NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerItemDidReachEnd", name: AVPlayerItemDidPlayToEndTimeNotification, object: moviePlayer.player?.currentItem)
@@ -60,7 +60,7 @@ public class JCVideoSplashViewController: UIViewController {
         }
     }
     
-    public var fillMode: ScalingMode = .ResizeAspectFill{
+    var fillMode: ScalingMode = .ResizeAspectFill{
         didSet{
             
             switch fillMode{
@@ -103,10 +103,26 @@ public class JCVideoSplashViewController: UIViewController {
     //MARK:method
     private func setMoviePlayer(url: NSURL){
         
+        let videoCutter = JCVideoCutter()
+        
+        videoCutter.cropVideoWithUrl(videoUrl: url, startTime: startTime, duration: duration) { (videoPath, error) -> Void in
+            
+            if let path = videoPath as NSURL?{
+                dispatch_async(dispatch_get_global_queue(0, 0)) { () -> Void in
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        self.moviePlayer.player = AVPlayer(URL: path)
+                        self.moviePlayer.player?.play()
+                        self.moviePlayer.player?.volume = self.moviePlayerSoundLevel
+                    }
+                }
+            }
+        }
     }
 
     func playerItemDidReachEnd(){
         
+        moviePlayer.player?.seekToTime(kCMTimeZero)
+        moviePlayer.player?.play()
         
     }
 }

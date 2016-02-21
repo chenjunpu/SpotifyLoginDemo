@@ -13,7 +13,9 @@ class LoginViewController: JCVideoSplashViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupVideoBackground()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +23,22 @@ class LoginViewController: JCVideoSplashViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func setupVideoBackground(){
+        
+        let path = NSBundle.mainBundle().pathForResource("m", ofType: "mp4")
 
-    /*
-    // MARK: - Navigation
+        let url = NSURL.fileURLWithPath(path!)
+        
+        videoFrame = view.frame
+        fillMode = .ResizeAspectFill
+        alwaysRepeat = true
+        sound = true
+        startTime = 2.0
+        alpha = 0.8
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        contentUrl = url
+        view.userInteractionEnabled = false
+
     }
-    */
-
 }
