@@ -15,8 +15,10 @@ class LoginViewController: JCVideoSplashViewController {
 
         setupVideoBackground()
         
-        
-    }
+//        loginButton.layer.cornerRadius = 4
+//        signupButton.layer.cornerRadius = 4
+
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
