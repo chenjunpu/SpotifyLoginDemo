@@ -2,7 +2,7 @@
 //  SpotifyLoginDemoTests.swift
 //  SpotifyLoginDemoTests
 //
-//  Created by chenjunpu on 16/2/20.
+//  Created by chenjunpu on 16/2/22.
 //  Copyright © 2016年 chenjunpu. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SpotifyLoginDemo
 //
-//  Created by chenjunpu on 16/2/20.
+//  Created by chenjunpu on 16/2/22.
 //  Copyright © 2016年 chenjunpu. All rights reserved.
 //
 
@@ -13,9 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+//        let vc = JCLoginController(nibName: "JCLoginController", bundle: nil)
+        let vc = LoginViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBarHidden = true
+        
+        window?.rootViewController = nav
+        window?.backgroundColor = UIColor.whiteColor()
+        
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
