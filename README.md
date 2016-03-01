@@ -1,5 +1,8 @@
 # Spotify Login Demo
 have an video in background 
+
+##DEMO:
+![image]()
 ##How to use
 1.Add the JCVideoController to your project.
 
