@@ -14,6 +14,7 @@
 		3928D3911C7B2DB8009339FA /* SpotifyLoginDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3928D3901C7B2DB8009339FA /* SpotifyLoginDemoUITests.swift */; };
 		3928D3A01C7B2F99009339FA /* JCVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3928D39E1C7B2F99009339FA /* JCVideoController.swift */; };
 		39614D801C81282300347BF9 /* JCLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39614D7F1C81282300347BF9 /* JCLoopView.swift */; };
+		3974BEFF1C8592120023B798 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974BEFE1C8592120023B798 /* LoginViewController.swift */; };
 		39FE88CA1C7C5409008CF33B /* m.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 39FE88C91C7C53EF008CF33B /* m.mp4 */; };
 		39FE88CC1C7C56FE008CF33B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE88CB1C7C56FE008CF33B /* WelcomeViewController.swift */; };
 		39FE89011C7C5D5A008CF33B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 39FE88F21C7C5D5A008CF33B /* LICENSE */; };
@@ -62,6 +63,7 @@
 		3928D3921C7B2DB8009339FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3928D39E1C7B2F99009339FA /* JCVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCVideoController.swift; sourceTree = "<group>"; };
 		39614D7F1C81282300347BF9 /* JCLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCLoopView.swift; sourceTree = "<group>"; };
+		3974BEFE1C8592120023B798 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		39FE88C91C7C53EF008CF33B /* m.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = m.mp4; sourceTree = "<group>"; };
 		39FE88CB1C7C56FE008CF33B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		39FE88F21C7C5D5A008CF33B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				3928D3701C7B2DB8009339FA /* AppDelegate.swift */,
 				3928D39E1C7B2F99009339FA /* JCVideoController.swift */,
 				39FE88CB1C7C56FE008CF33B /* WelcomeViewController.swift */,
+				3974BEFE1C8592120023B798 /* LoginViewController.swift */,
 				39614D7F1C81282300347BF9 /* JCLoopView.swift */,
 				3928D3771C7B2DB8009339FA /* Assets.xcassets */,
 				3928D3791C7B2DB8009339FA /* LaunchScreen.storyboard */,
@@ -335,6 +338,7 @@
 				39FE89081C7C5D5A008CF33B /* ConstraintRelation.swift in Sources */,
 				39FE890E1C7C5D5A008CF33B /* ViewController+SnapKit.swift in Sources */,
 				39FE890D1C7C5D5A008CF33B /* View+SnapKit.swift in Sources */,
+				3974BEFF1C8592120023B798 /* LoginViewController.swift in Sources */,
 				39FE89031C7C5D5A008CF33B /* Constraint.swift in Sources */,
 				39FE89051C7C5D5A008CF33B /* ConstraintDescription.swift in Sources */,
 				3928D3A01C7B2F99009339FA /* JCVideoController.swift in Sources */,

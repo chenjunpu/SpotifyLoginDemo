@@ -19,7 +19,6 @@ class WelcomeViewController: JCVideoController {
         btn.backgroundColor = UIColor.darkGrayColor()
         btn.setTitle("LOG IN", forState: .Normal)
         btn.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
-        btn.tintColor = UIColor.whiteColor()
         
         btn.addTarget(self, action: "logInBtnDidClick", forControlEvents: .TouchUpInside)
         
@@ -29,10 +28,9 @@ class WelcomeViewController: JCVideoController {
     lazy private var signUpBtn: UIButton = {
         
         let btn = UIButton()
-        btn.backgroundColor = UIColor.greenColor()
+        btn.backgroundColor = UIColor.init(red: 0, green: 195/255, blue: 0, alpha: 1)
         btn.setTitle("SIGN UP", forState: .Normal)
         btn.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
-        btn.tintColor = UIColor.whiteColor()
         
         btn.addTarget(self, action: "logInBtnDidClick", forControlEvents: .TouchUpInside)
         
@@ -74,6 +72,7 @@ class WelcomeViewController: JCVideoController {
         
         super.viewDidLoad()
 
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,7 +82,10 @@ class WelcomeViewController: JCVideoController {
     
     //MARK:UI actions
     @objc private func logInBtnDidClick(){
-        print("login")
+        
+        let vc = LoginViewController()
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
