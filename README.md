@@ -2,7 +2,7 @@
 have an video in background 
 
 ##DEMO:
-![image]()
+![image](https://github.com/chenjunpu/SpotifyLoginVideo/blob/master/v.gif)
 ##How to use
 1.Add the JCVideoController to your project.
 
