@@ -13,13 +13,10 @@
 		3928D3861C7B2DB8009339FA /* SpotifyLoginDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3928D3851C7B2DB8009339FA /* SpotifyLoginDemoTests.swift */; };
 		3928D3911C7B2DB8009339FA /* SpotifyLoginDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3928D3901C7B2DB8009339FA /* SpotifyLoginDemoUITests.swift */; };
 		3928D3A01C7B2F99009339FA /* JCVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3928D39E1C7B2F99009339FA /* JCVideoController.swift */; };
-		3928D3A11C7B2F99009339FA /* JCLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3928D39F1C7B2F99009339FA /* JCLoginController.xib */; };
 		39614D801C81282300347BF9 /* JCLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39614D7F1C81282300347BF9 /* JCLoopView.swift */; };
-		39FE88C81C7C3BC3008CF33B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FE88C71C7C3BC3008CF33B /* Login.storyboard */; };
 		39FE88CA1C7C5409008CF33B /* m.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 39FE88C91C7C53EF008CF33B /* m.mp4 */; };
-		39FE88CC1C7C56FE008CF33B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE88CB1C7C56FE008CF33B /* LoginViewController.swift */; };
+		39FE88CC1C7C56FE008CF33B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE88CB1C7C56FE008CF33B /* WelcomeViewController.swift */; };
 		39FE89011C7C5D5A008CF33B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 39FE88F21C7C5D5A008CF33B /* LICENSE */; };
-		39FE89021C7C5D5A008CF33B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 39FE88F31C7C5D5A008CF33B /* README.md */; };
 		39FE89031C7C5D5A008CF33B /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE88F51C7C5D5A008CF33B /* Constraint.swift */; };
 		39FE89041C7C5D5A008CF33B /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE88F61C7C5D5A008CF33B /* ConstraintAttributes.swift */; };
 		39FE89051C7C5D5A008CF33B /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE88F71C7C5D5A008CF33B /* ConstraintDescription.swift */; };
@@ -64,13 +61,10 @@
 		3928D3901C7B2DB8009339FA /* SpotifyLoginDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginDemoUITests.swift; sourceTree = "<group>"; };
 		3928D3921C7B2DB8009339FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3928D39E1C7B2F99009339FA /* JCVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCVideoController.swift; sourceTree = "<group>"; };
-		3928D39F1C7B2F99009339FA /* JCLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCLoginController.xib; sourceTree = "<group>"; };
 		39614D7F1C81282300347BF9 /* JCLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCLoopView.swift; sourceTree = "<group>"; };
-		39FE88C71C7C3BC3008CF33B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		39FE88C91C7C53EF008CF33B /* m.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = m.mp4; sourceTree = "<group>"; };
-		39FE88CB1C7C56FE008CF33B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		39FE88CB1C7C56FE008CF33B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		39FE88F21C7C5D5A008CF33B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		39FE88F31C7C5D5A008CF33B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		39FE88F51C7C5D5A008CF33B /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		39FE88F61C7C5D5A008CF33B /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
 		39FE88F71C7C5D5A008CF33B /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -137,10 +131,8 @@
 				39FE88C91C7C53EF008CF33B /* m.mp4 */,
 				3928D3701C7B2DB8009339FA /* AppDelegate.swift */,
 				3928D39E1C7B2F99009339FA /* JCVideoController.swift */,
-				39FE88CB1C7C56FE008CF33B /* LoginViewController.swift */,
+				39FE88CB1C7C56FE008CF33B /* WelcomeViewController.swift */,
 				39614D7F1C81282300347BF9 /* JCLoopView.swift */,
-				39FE88C71C7C3BC3008CF33B /* Login.storyboard */,
-				3928D39F1C7B2F99009339FA /* JCLoginController.xib */,
 				3928D3771C7B2DB8009339FA /* Assets.xcassets */,
 				3928D3791C7B2DB8009339FA /* LaunchScreen.storyboard */,
 				3928D37C1C7B2DB8009339FA /* Info.plist */,
@@ -170,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				39FE88F21C7C5D5A008CF33B /* LICENSE */,
-				39FE88F31C7C5D5A008CF33B /* README.md */,
 				39FE88F41C7C5D5A008CF33B /* Source */,
 			);
 			path = SnapKit;
@@ -305,8 +296,6 @@
 			files = (
 				39FE89011C7C5D5A008CF33B /* LICENSE in Resources */,
 				39FE88CA1C7C5409008CF33B /* m.mp4 in Resources */,
-				39FE88C81C7C3BC3008CF33B /* Login.storyboard in Resources */,
-				3928D3A11C7B2F99009339FA /* JCLoginController.xib in Resources */,
 				3928D37B1C7B2DB8009339FA /* LaunchScreen.storyboard in Resources */,
 				3928D3781C7B2DB8009339FA /* Assets.xcassets in Resources */,
 			);
@@ -334,11 +323,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				39FE890B1C7C5D5A008CF33B /* LayoutConstraint.swift in Sources */,
-				39FE88CC1C7C56FE008CF33B /* LoginViewController.swift in Sources */,
+				39FE88CC1C7C56FE008CF33B /* WelcomeViewController.swift in Sources */,
 				3928D3711C7B2DB8009339FA /* AppDelegate.swift in Sources */,
 				39FE890A1C7C5D5A008CF33B /* EdgeInsets.swift in Sources */,
 				39FE89071C7C5D5A008CF33B /* ConstraintMaker.swift in Sources */,
-				39FE89021C7C5D5A008CF33B /* README.md in Sources */,
 				39FE890C1C7C5D5A008CF33B /* SnapKit.swift in Sources */,
 				39FE89091C7C5D5A008CF33B /* Debugging.swift in Sources */,
 				39FE89061C7C5D5A008CF33B /* ConstraintItem.swift in Sources */,

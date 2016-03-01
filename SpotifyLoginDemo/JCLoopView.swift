@@ -10,30 +10,43 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class JCLoopView: UICollectionView,UICollectionViewDataSource,UICollectionViewDelegate {
+class JCLoopView: UIView,UICollectionViewDataSource,UICollectionViewDelegate {
     
     //MARK:properties
-    private var titleArray: [String]?
+    private var loopView: UICollectionView?
     
-    private var cycleTimer :NSTimer?
+    var titleArray: [String]?
+    
+    private var cycleTimer: NSTimer?
+    
+    lazy var pageVc: UIPageControl = UIPageControl()
     
     //MARK:life cycle
     init(titleArray: [String]){
+        super.init(frame: CGRectZero)
         
-        super.init(frame: CGRectZero, collectionViewLayout: LoopViewLayout())
-        
+        loopView = UICollectionView(frame: self.bounds, collectionViewLayout: LoopViewLayout())
         self.titleArray = titleArray
-        self.delegate = self
-        self.dataSource = self
+        loopView!.delegate = self
+        loopView!.dataSource = self
         
-        self.registerClass(LoopViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        loopView!.registerClass(LoopViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        addSubview(loopView!)
+        addSubview(pageVc)
+
+        pageVc.numberOfPages = (titleArray.count)
+        pageVc.currentPageIndicatorTintColor = UIColor.whiteColor()
         
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             if self.titleArray?.count > 1 {
                 
                 let index = NSIndexPath(forItem: (self.titleArray?.count)!, inSection: 0)
                 
-                self.scrollToItemAtIndexPath(index, atScrollPosition: .Right, animated: false)
+                self.loopView!.scrollToItemAtIndexPath(index, atScrollPosition: .Right, animated: false)
+                
+                self.timeStart()
+                
             }
         }
 
@@ -43,35 +56,49 @@ class JCLoopView: UICollectionView,UICollectionViewDataSource,UICollectionViewDe
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        loopView?.frame = self.frame
+        
+        pageVc.snp_makeConstraints(closure: { (make) -> Void in
+            make.centerX.equalTo(self.snp_centerX).multipliedBy(1).offset(0)
+            make.bottom.equalTo(self.snp_bottom).multipliedBy(1).offset(-170)
+
+
+        })
+        
+    }
     
-//    private func timeStart(){
-//        
-//        let timer = NSTimer(timeInterval: 2, target: self, selector: "next", userInfo: nil, repeats: true)
-//        cycleTimer = timer
-//        
-//        let runloop = NSRunLoop.currentRunLoop()
-//        runloop.addTimer(timer, forMode: NSRunLoopCommonModes)
-//        
-//    }
-//    
-//    func next(){
-//        
-//        let indexPath = PictureCycleView!
-//            .indexPathsForVisibleItems().first!
-//        
-//        let item = indexPath.item
-//        let section = indexPath.section
-//        
-//        
-//        if item == titleArray.count - 1{
-//            //最后一个item,跳到下一组
-//            PictureCycleView!.selectItemAtIndexPath(NSIndexPath(forItem: 0 , inSection: section + 1), animated: true, scrollPosition: UICollectionViewScrollPosition.Right)
-//        }
-//        else{
-//            //下一个item
-//            PictureCycleView?.selectItemAtIndexPath(NSIndexPath(forItem: item + 1, inSection: section), animated: true, scrollPosition: .Right)
-//        }
-//    }
+    //MARK:method
+    private func timeStart(){
+        
+        let timer = NSTimer(timeInterval: 2, target: self, selector: "next", userInfo: nil, repeats: true)
+        cycleTimer = timer
+        
+        let runloop = NSRunLoop.currentRunLoop()
+        runloop.addTimer(timer, forMode: NSRunLoopCommonModes)
+        
+    }
+    
+    
+    private func stopTimer(){
+        cycleTimer?.invalidate()
+        
+        cycleTimer = nil
+    }
+
+    
+    func next(){
+        
+        let indexPath  = loopView!.indexPathsForVisibleItems().first!
+        
+        let item = indexPath.item
+        let section = indexPath.section
+        
+        loopView!.selectItemAtIndexPath(NSIndexPath(forItem: item + 1, inSection: section), animated: true, scrollPosition: .Right)
+
+    }
 
     
     // MARK: UICollectionViewDataSource
@@ -96,7 +123,7 @@ class JCLoopView: UICollectionView,UICollectionViewDataSource,UICollectionViewDe
         
         var offset: NSInteger = NSInteger(scrollView.contentOffset.x / scrollView.bounds.size.width)
         
-        if offset == 0 || offset == (self.numberOfItemsInSection(0) - 1){
+        if offset == 0 || offset == (loopView!.numberOfItemsInSection(0) - 1){
             
             
             offset = self.titleArray!.count - (offset == 0 ? 0 : 1)
@@ -104,7 +131,23 @@ class JCLoopView: UICollectionView,UICollectionViewDataSource,UICollectionViewDe
             scrollView.contentOffset = CGPointMake(CGFloat(offset) * scrollView.bounds.size.width, 0)
         }
     }
+    
+    
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        let ind = indexPath.item % titleArray!.count
+        self.pageVc.currentPage = ind
+    }
 
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView){
+        
+        stopTimer()
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool){
+        
+        timeStart()
+    }
     
 }
 
@@ -129,12 +172,13 @@ class LoopViewLayout: UICollectionViewFlowLayout{
 }
 
 
-
 //MARK:LoopViewCell
 class LoopViewCell: UICollectionViewCell{
     
     //MARK:properties
     var textLabel: UILabel?
+    
+    var pageVc: UIPageControl?
     
     var titleText: String?{
         didSet{
@@ -162,6 +206,7 @@ class LoopViewCell: UICollectionViewCell{
             make.bottom.equalTo(self.snp_bottom).multipliedBy(1).offset(-200)
             
         })
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

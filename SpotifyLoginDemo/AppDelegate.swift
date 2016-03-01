@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-//        let vc = JCLoginController(nibName: "JCLoginController", bundle: nil)
-        let vc = LoginViewController()
+
+        let vc = WelcomeViewController()
         let nav = UINavigationController(rootViewController: vc)
         nav.navigationBarHidden = true
         

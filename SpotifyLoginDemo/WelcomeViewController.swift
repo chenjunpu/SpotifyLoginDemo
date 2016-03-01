@@ -10,7 +10,7 @@ import UIKit
 
 let PictureCycleCellID = "PictureCycleCellID"
 
-class LoginViewController: JCVideoController {
+class WelcomeViewController: JCVideoController {
     
     //MARK:properties
     lazy private var loginBtn: UIButton = {
@@ -48,7 +48,7 @@ class LoginViewController: JCVideoController {
         return imgView
     }()
     
-    private var PictureCycleView: UICollectionView?
+    private var PictureCycleView: JCLoopView?
     
     private lazy var titleArray: [String] = {
         let arr = ["Welcome\nSign up for free music on your phone,\ntablet and computer.",
@@ -89,17 +89,12 @@ class LoginViewController: JCVideoController {
 }
 
 //MARK:UI method
-extension LoginViewController{
+extension WelcomeViewController{
     
     private func setUpUI(){
 
 //        add CollectionView
         PictureCycleView = JCLoopView(titleArray: self.titleArray)
-        
-//        PictureCycleView!.showsHorizontalScrollIndicator = false
-//        PictureCycleView!.showsVerticalScrollIndicator = false
-//        PictureCycleView!.pagingEnabled = true
-//        PictureCycleView?.backgroundColor = UIColor.clearColor()
         
         PictureCycleView?.frame = self.contentView.bounds
         
